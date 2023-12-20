@@ -15,10 +15,10 @@ const postpage = ({page}) => {
 }
 
 export async function getServerSideProps(context) {
-  const { postId } = context.params;
+  const { page } = context.params;
   return {
     props: {
-      postId,
+      page,
     },
   };
 }
