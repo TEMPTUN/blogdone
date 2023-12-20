@@ -2,12 +2,9 @@ import React from 'react'
 import Page from '@/components/Page'
 import Navbar from '@/components/Navbar'
 import Comment from '@/components/Comment'
-import { useRouter } from 'next/router'
 
 
-const postpage = () => {
-  const router = useRouter();
-  const { page } = router.query;
+const postpage = ({page}) => {
   return (
     <>  
         <Navbar/>
@@ -15,6 +12,15 @@ const postpage = () => {
         <Comment id={page} />
     </>
   )
+}
+
+export async function getServerSideProps(context) {
+  const { postId } = context.params;
+  return {
+    props: {
+      postId,
+    },
+  };
 }
 
 export default postpage

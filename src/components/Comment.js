@@ -7,12 +7,12 @@ const Comment = ({id}) => {
     const [comments, setComments] = useState([]);
     const [com, setCom] = useState('');
 
-    const handlecommen=async(e)=>{
-        e.preventDefault();
-        await axios.post('https://woolback-complementme001-gmailcom.vercel.app/api/bcomment', { comment: com, id: id,username:localStorage.getItem('token') });
-        setCom('');
+    // const handlecommen=async(e)=>{
+    //     e.preventDefault();
+    //     await axios.post('https://woolback-complementme001-gmailcom.vercel.app/api/bcomment', { comment: com, id: id,username:localStorage.getItem('token') });
+    //     setCom('');
         
-    }
+    // }
 
     // useEffect(() => {
       
@@ -22,7 +22,7 @@ const Comment = ({id}) => {
     return (
       <div className={styles['comments-container']}> 
         <h2>Comments</h2>
-        <form  className={styles.forme} onSubmit={handlecommen}>
+        <form  className={styles.forme} >
             <input
             type="text"
             placeholder="Add a new comment"
@@ -32,7 +32,7 @@ const Comment = ({id}) => {
         </form>
         <ul>
           {comments.map((comment) => (
-            <li>
+            <li key={comment.id}>
               <p style={{color:'black'}}>{comment}</p>
             </li>
           ))}
