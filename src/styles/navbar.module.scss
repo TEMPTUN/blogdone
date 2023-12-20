@@ -1,0 +1,26 @@
+.headers{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:whitesmoke;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2% 19% 2% 19%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a{
+            color: #000;
+            font-weight: 600;
+            margin-left: 20px;
+            text-decoration: none;
+            &:hover{
+                color: #000;
+            }
+        }
+    }
+}
