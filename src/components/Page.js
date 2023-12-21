@@ -13,13 +13,12 @@ const Page = ({id}) => {
     }
     const res=await axios.get(`https://woolback-complementme001-gmailcom.vercel.app/api/bs?id=${id}`)
     setPosts(res.data)
-    // console.log(res.data);
+    
   }
 
   useEffect(() => {
     fun();
   } , [id])
-  // console.log(posts);
   return (
     <>
         <div className={styles.postpage}>

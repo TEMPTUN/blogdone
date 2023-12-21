@@ -15,7 +15,7 @@ const Post = ({post}) => {
             <div>
                 <h2>{post.title}
                 </h2> 
-                <span>{post.username}<span>{post.date}</span></span>
+                <span>{post.username}<span>  {post.date}</span></span>
                 <p>{post.summary}
                 </p>
             </div>
